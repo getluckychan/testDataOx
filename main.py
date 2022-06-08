@@ -100,7 +100,9 @@ class HomeAndPeople:
                 self.people[self.elevator_step].remove(upper[0])
                 print(f'{upper[0]} come in elevator and want ride up')
                 upper.pop(0)
+                print(f'{v} in elevator')
                 self.checking_up()
+
         else:
             for i in self.people[self.elevator_step]:
                 if i[2] < self.elevator_step + 1:
@@ -111,7 +113,9 @@ class HomeAndPeople:
                     self.people[self.elevator_step].remove(downer[0])
                     print(f'{downer[0]} come in elevator and want ride down')
                     downer.pop(0)
+                    print(f'{v} in elevator')
                     self.checking_down()
+
             else:
                 if self.elevator_step == -1:
                     from sys import exit
