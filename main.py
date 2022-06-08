@@ -39,7 +39,7 @@ class HomeAndPeople:
     def step_up(self):  # лифт едет на следующий этаж
         self.elevator_step += 1
         if len(self.elevator) == 0:
-            for i in range(6):
+            for i in range(5):
                 if len(self.people[self.elevator_step]) > 0:
                     self.elevator.append(self.people[self.elevator_step][0])
                     print(f'{self.people[self.elevator_step][0]} come in elevator and want ride up')
@@ -49,7 +49,7 @@ class HomeAndPeople:
     def step_down(self):  # лифт едет на предыдущий этаж
         self.elevator_step -= 1
         if len(self.elevator) == 0:
-            for i in range(6):
+            for i in range(5):
                 if len(self.people[self.elevator_step]) > 0:
                     self.elevator.append(self.people[self.elevator_step][0])
                     print(f'{self.people[self.elevator_step][0]} come in elevator and want ride down')
@@ -61,7 +61,7 @@ class HomeAndPeople:
         for i in self.elevator:
             if i[2] < self.elevator_step + 1:
                 b += 1
-        if b == 6:
+        if b == 5:
             self.checking_down()
         else:
             self.step_up()
@@ -85,9 +85,9 @@ class HomeAndPeople:
             else:
                 pass
         v = len(self.elevator)
-        if v == 6:
+        if v == 5:
             self.checking_up()
-        b = 6 - v
+        b = 5 - v
         upper = []
         downer = []
         for i in self.people[self.elevator_step]:
